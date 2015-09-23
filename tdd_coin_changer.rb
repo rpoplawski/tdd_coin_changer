@@ -1,0 +1,15 @@
+class Changer
+  def self.run(amt)
+    return_amount = []
+    coins = [25, 10, 5, 1]
+    coins.each do |coin|
+      if amt >= coin
+        number_of_coins = amt / coin
+        value_of_coins = number_of_coins * coin
+        amt = amt - value_of_coins
+        return_amount << Array.new(number_of_coins, coin)
+      end
+    end
+    return_amount.flatten
+  end
+end
